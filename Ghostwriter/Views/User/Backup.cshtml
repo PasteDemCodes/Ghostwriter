@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "Backup";
+}
+
+@{ var LastBackUp = DateTime.Now.Date; }
+
+<div class="jumbotron">
+    <h4 class="display-4">Select one of the options below to perform a local backup</h4>
+    <p class="lead">Last Backup performed on: @LastBackUp</p>
+    @using (Html.BeginForm("IncrementalBackUp", "User", FormMethod.Post))
+    {
+        <hr class="my-4">
+        <h6 class="display-6">Incremental Backup</h6>
+        <p>
+            An incremental backup is a type of backup that only copies files that have changed since the previous backup.
+            For example, if a full backup was performed on Monday, Tuesday's incremental will back up all changed files since Monday's backup.
+            However, Wednesday's incremental will only back up files that have changed since Tuesday's incremental backup and so on until another
+            full backup is performed.
+        </p>
+        <button type="submit" class="btn btn-primary" value="IncrementalBackUp">Download</button>
+    }
+    @using (Html.BeginForm("FullBackUp", "User", FormMethod.Post))
+    {
+        <hr class="my-4">
+        <h6 class="display-6">Full Back</h6>
+        <p>Just Back up everything</p>
+        <button type="submit" class="btn btn-primary" value="FullBackUp">Download</button>
+    }
+</div>

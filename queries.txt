@@ -1,0 +1,31 @@
+﻿i)
+Ανέκτησε τα στοιχεία επικοινωνίας των συγγραφέων που τα βιβλία τους είναι ανάμεσα σε X πρώτα σε πωλήσεις για συγκεκριμένο χρονικό διάστημα.
+Ο χρήστης θα πρέπει να ορίζει τα εξής κριτήρια για την δημιουργία της αναφοράς:
+Αριθμός Χ=3,  Χρονικό διάστημα Ημερομηνία Από – Έως.
+
+SELECT TOP 3 authors.au_lname, authors.au_fname, authors.phone, authors.address, authors.city, authors.state, authors.zip, authors.contract, titles.title
+FROM authors
+INNER JOIN titleauthor
+	ON authors.au_id = titleauthor.au_id
+INNER JOIN titles
+	ON titleauthor.title_id = titles.title_id
+INNER JOIN sales
+	ON sales.title_id = titles.title_id
+WHERE sales.ord_date BETWEEN '1994-09-14 00:00:00.000' AND '1994-09-14 00:00:00.000'
+ORDER BY titles.ytd_sales DESC;
+
+ii)
+Δημιούργησε μια αναφορά που θα δείχνει το Id της παραγγελίας (OrderID), το κατάστημα στο οποίο έγινε η παραγγελία
+και ο τίτλος του βιβλίου που σχετίζεται με την αντίστοιχη παραγγελία.
+Εμφάνισε εκείνες τις παραγγελίες που έγιναν (ordered) εντός ενός ημερολογιακού διαστήματος.
+Ο χρήστης θα πρέπει να ορίζει τα εξής κριτήρια για την δημιουργία της αναφοράς:
+Χρονικό διάστημα παραγγελιών Ημερομηνία Από - Έως, Επωνυμία καταστήματος Από - Έως (χρησιμοποιώντας τον τελεστή LIKE).
+
+SELECT sales.ord_num, titles.title, stores.stor_name, stores.stor_address, stores.city, stores.state, stores.zip
+FROM stores
+INNER JOIN sales
+	ON sales.stor_id = stores.stor_id
+INNER JOIN titles
+	ON titles.title_id = sales.title_id
+WHERE sales.ord_date BETWEEN '1994-09-14 00:00:00.000' AND '1994-09-14 00:00:00.000'
+AND stores.stor_name LIKE '%';
