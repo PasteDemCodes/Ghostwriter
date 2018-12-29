@@ -84,3 +84,4 @@ C:\Users\zogdi\Documents\Visual Studio 2017\Projects\Ghostwriter\Ghostwriter\bin
 C:\Users\zogdi\Documents\Visual Studio 2017\Projects\Ghostwriter\Ghostwriter\bin\Microsoft.Owin.dll
 C:\Users\zogdi\Documents\Visual Studio 2017\Projects\Ghostwriter\Ghostwriter\bin\Owin.dll
 C:\Users\zogdi\Documents\Visual Studio 2017\Projects\Ghostwriter\Ghostwriter\bin\Microsoft.Owin.xml
+C:\Users\zogdi\Documents\Visual Studio 2017\Projects\Ghostwriter\Ghostwriter\obj\Debug\Ghostwriter.csprojAssemblyReference.cache

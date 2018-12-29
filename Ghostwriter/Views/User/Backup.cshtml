@@ -27,4 +27,14 @@
         <p>Just Back up everything</p>
         <button type="submit" class="btn btn-primary" value="FullBackUp">Download</button>
     }
+    @using (Html.BeginForm("Restore", "User", FormMethod.Post))
+    {
+        <hr class="my-4">
+        <h6 class="display-6">Restore Database State</h6>
+        <div class="form-group">
+            <label for="exampleInputFile">Select a file to restore from</label>
+            <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+        </div>
+        <button type="submit" class="btn btn-primary" value="Restore">Restore</button>
+    }
 </div>

@@ -49,6 +49,12 @@ namespace Ghostwriter.Controllers{
         public ActionResult FullBackUp()
         {
             return View();
-        }        
+        }
+
+        [HttpPost]
+        public ActionResult Restore()
+        {
+            return View();
+        }
     }
 }
